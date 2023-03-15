@@ -1,2 +1,2 @@
 # r4ds-repo
-Exercises from r4ds
+Answered exercises from R for data Science - available from https://r4ds.had.co.nz/index.html
