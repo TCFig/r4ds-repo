@@ -41,13 +41,13 @@ diamonds %>% sample_n(1000) %>%
   ggplot() +
   geom_point(aes(x = x, y = z)) + 
   coord_fixed()
-# A. the values of x and y are similiar to each other to all 1000 indivduals. On the other had, z is always (~60%) smaller  than x and y.
+# A. the values of x and y are similiar to each other to all 1000 individuals, so they could be length and width. On the other had, z is always (~60%) smaller than x and y, making it the depth.
 
 # Q2. Explore the distribution of price. Do you discover anything unusual or surprising? (Hint: Carefully think about the binwidth and make sure you try a wide range of values.)
 # A. 
 ggplot(diamonds) +
   geom_histogram(aes(x = price), binwidth = 50)
-# There are a higher number of diamonds with lowcost. After cost > 1000 the number of diamonds decreases exponentially.
+# There are a higher number of diamonds with lowcost. After cost > 1000 the number of diamonds decreases exponentially. Distribution is positively skewed
 ggplot(diamonds) +
   geom_histogram(aes(x = price), binwidth = 10) +
   coord_cartesian(xlim = c(1450, 1550))
@@ -69,6 +69,15 @@ ggplot(diamonds) +
 
 # Q4. Compare and contrast coord_cartesian() vs xlim() or ylim() when zooming in on a histogram. What happens if you leave binwidth unset? What happens if you try and zoom so only half a bar shows?
 # A. 
+
+
+# Exercise 7.4.1 - Covariation: A categorical and continuous variable ============================================================================================================================================
+
+# Q1. What happens to missing values in a histogram? What happens to missing values in a bar chart? Why is there a difference?
+# A. If a variable is numeric, missing valuesare ignoredin both bar charts and histograms. However, if the variable is categorical, in a bar chart it creates a column with missing values.
+
+# Q2. What does na.rm = TRUE do in mean() and sum()?
+# A. na.rm() in sum() and mean(), removes all missing values, making it possible to calculate the sum and mean of variables that may contain missing values.
 
 
 # Exercise 7.5.1.1 - Covariation: A categorical and continuous variable ============================================================================================================================================
